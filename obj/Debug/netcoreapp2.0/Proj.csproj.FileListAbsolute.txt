@@ -1,0 +1,10 @@
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\bin\Debug\netcoreapp2.0\Proj.deps.json
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\bin\Debug\netcoreapp2.0\Proj.runtimeconfig.json
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\bin\Debug\netcoreapp2.0\Proj.runtimeconfig.dev.json
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\bin\Debug\netcoreapp2.0\Proj.dll
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\bin\Debug\netcoreapp2.0\Proj.pdb
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\obj\Debug\netcoreapp2.0\Proj.csproj.CoreCompileInputs.cache
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\obj\Debug\netcoreapp2.0\Proj.AssemblyInfoInputs.cache
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\obj\Debug\netcoreapp2.0\Proj.AssemblyInfo.cs
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\obj\Debug\netcoreapp2.0\Proj.dll
+C:\Users\44063076806\backend\mvc\ProjCidades\proj\obj\Debug\netcoreapp2.0\Proj.pdb
