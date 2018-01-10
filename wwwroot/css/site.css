@@ -33,3 +33,10 @@
         display: none;
     }
 }
+
+td:nth-child(even) {
+    background-color: #259521; 
+}
+th {
+    background-color: #259521;
+}
