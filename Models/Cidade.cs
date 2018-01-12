@@ -9,7 +9,6 @@ namespace Proj.Models
         public string Nome { get; set; }
         public string Estado { get; set; }
         public int Habitantes { get; set; }
-
         public Cidade()
         {
             

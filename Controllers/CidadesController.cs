@@ -7,25 +7,25 @@ namespace Proj.Controllers
 {
     public class CidadesController : Controller
     {
-        CidadeRep cidade = new CidadeRep();
+        CidadeRep cidadeRep = new CidadeRep();
         public IActionResult Index()
         {
             ViewData["title"] = "Cidades";
-            var lista = cidade.ListarCidades();
+            var lista = cidadeRep.ListarCidades();
             return View(lista);
         }
 
         public IActionResult CidadesEstados()
         {
             ViewData["title"] = "CidadesController e Estados";
-            var lista = cidade.ListarCidades();
+            var lista = cidadeRep.ListarCidades();
             return View(lista);
         }
 
         public IActionResult TodosOsDados()
         {
             ViewData["title"] = "Todos os Dados";
-            var lista = cidade.ListarCidades();
+            var lista = cidadeRep.ListarCidades();
             return View(lista);
         }
 
@@ -36,10 +36,16 @@ namespace Proj.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar([Bind] Cidade cid)
+        public IActionResult Cadastrar([Bind] Cidade cidade)
         {
-            cidade.Cadastrar(cid);
+            cidadeRep.Cadastrar(cidade);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Editar(int Id) {
+            var dados = cidadeRep.ListarCidades(Id);
+            return View(dados);
         }
     }
 }

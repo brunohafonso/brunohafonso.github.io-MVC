@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\44063076806\\backend\\mvc\\ProjCidades\\proj\\Proj.csproj",
+      "projectUniqueName": "C:\\Users\\44063076806\\backend\\mvc\\ProjCidades\\Proj\\Proj.csproj",
       "projectName": "Proj",
-      "projectPath": "C:\\Users\\44063076806\\backend\\mvc\\ProjCidades\\proj\\Proj.csproj",
+      "projectPath": "C:\\Users\\44063076806\\backend\\mvc\\ProjCidades\\Proj\\Proj.csproj",
       "packagesPath": "C:\\Users\\44063076806\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\44063076806\\backend\\mvc\\ProjCidades\\proj\\obj\\",
+      "outputPath": "C:\\Users\\44063076806\\backend\\mvc\\ProjCidades\\Proj\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
