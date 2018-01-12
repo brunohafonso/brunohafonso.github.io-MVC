@@ -1,16 +1,27 @@
 @model IEnumerable<Proj.Models.Cidade>
 <div>
     <h1>Minhas Cidades</h1>
+    <p>
+        @Html.ActionLink("Cadastrar nova cidade","Cadastrar","Cidades")
+    </p>
     <table class="table">
         <tr>
+            <th>Id</th>
             <th>Nome da cidade</td>
+            <th>Estado</th>
             <th>População</td>
+            <th colspan="3">Opções</th>
         </tr>
         @{
             foreach(var item in Model) {
                 <tr>
+                    <td>@item.Id</td>
                     <td>@item.Nome</td>
+                    <td>@item.Estado</td>
                     <td>@item.Habitantes Habitantes</td>
+                    <td>@Html.ActionLink("Editar", "Editar", "Cidades", new { @item.Id })</td>
+                    <td>@Html.ActionLink("Detalhes", "Detalhes", "Cidades", new { @item.Id})</td>
+                    <td>@Html.ActionLink("Excluir", "Excluir", "Cidades", new { @item.Id})</td>
                 </tr>
             }
         }

@@ -1,0 +1,28 @@
+@model Proj.Models.Cidade
+@{
+    ViewData["title"] = "Cadastrar";
+}
+
+<div class="row">
+    <form asp-action="Cadastrar">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome da Cidade</label>
+                <input asp-for="Nome" class="form-control" placeholder="Ex: São Paulo" required="required"/>
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label">Estado</label>
+                <input  asp-for="Estado" class="form-control" placeholder="Ex: SP" required="required"/>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Habitantes" class="control-label">Habitantes</label>
+                <input  asp-for="Habitantes" class="form-control" placeholder="Ex: 10.000" required="required"/>
+                <span asp-validation-for="Habitantes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-dafault"/>
+            </div>
+    </form>
+</div>
