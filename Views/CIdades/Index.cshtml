@@ -19,7 +19,7 @@
                     <td>@item.Nome</td>
                     <td>@item.Estado</td>
                     <td>@item.Habitantes Habitantes</td>
-                    <td>@Html.ActionLink("Editar", "Editar", "Cidades", new { @item.Id })</td>
+                    <td><a asp-action="Deletar" asp-route-id="@item.Id" onclick="return confirm('Deseja mesmo exluir este item ?')">Excluir</a></td>
                     <td>@Html.ActionLink("Detalhes", "Detalhes", "Cidades", new { @item.Id})</td>
                     <td>@Html.ActionLink("Excluir", "Excluir", "Cidades", new { @item.Id})</td>
                 </tr>
