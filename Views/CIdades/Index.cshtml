@@ -19,9 +19,9 @@
                     <td>@item.Nome</td>
                     <td>@item.Estado</td>
                     <td>@item.Habitantes Habitantes</td>
-                    <td>@Html.ActionLink("Editar", "Editar", "Cidades", new { @item.Id })</td>
-                    <td>@Html.ActionLink("Detalhes", "Detalhes", "Cidades", new { @item.Id})</td>
-                    <td>@Html.ActionLink("Excluir", "Excluir", "Cidades", new { @item.Id})</td>
+                    <td>@Html.ActionLink("Editar", "Editar", "Cidades", new {@Id=@item.Id})</td>
+                    <td>@Html.ActionLink("Detalhes", "Detalhes", "Cidades", new {@Id=@item.Id})</td>
+                    <td>@Html.ActionLink("Excluir", "Deletar", "Cidades", new {@Id=@item.Id})</td>
                 </tr>
             }
         }

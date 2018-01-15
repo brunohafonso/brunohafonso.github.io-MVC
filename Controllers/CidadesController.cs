@@ -47,5 +47,17 @@ namespace Proj.Controllers
             var dados = cidadeRep.ListarCidades(Id);
             return View(dados);
         }
+
+        [HttpPost]
+        public IActionResult Editar([Bind] Cidade cidade) {
+            cidadeRep.Editar(cidade);
+            return RedirectToAction("Index"); 
+        }
+
+        [HttpGet]
+        public IActionResult Deletar(int Id) {
+          cidadeRep.Deletar(Id);
+          return RedirectToAction("Index");
+        }
     }
 }
