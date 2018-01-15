@@ -8,9 +8,12 @@ namespace Proj.Repositorio
     public class CidadeRep
     {
         string ConnectionString = @"Data source=.\SqlExpress;Initial Catalog=ProjetoCidades;User Id=sa;Password=senai@123;";
+        //variavel de conexão
         SqlConnection Cn;
+        //função para listar todos os dads do banco, retorna eles dentro de uma lista
         public List<Cidade> ListarCidades()
         {
+            //lista de cidades
             List<Cidade> Cidades = new List<Cidade>();
             //criando a conexão
             SqlConnection Cn = new SqlConnection(ConnectionString);
@@ -39,13 +42,13 @@ namespace Proj.Repositorio
         public List<Cidade> ListarCidades(int Id)
         {
             List<Cidade> Cidades = new List<Cidade>();
-            Cidade cidade = new Cidade();
             //criando a conexão
             SqlConnection Cn = new SqlConnection(ConnectionString);
             //variavel com query
             string SqlQuery = "SELECT * FROM Cidades WHERE Id = @Id";
             //lendo query e definindo em qual conexão ela será realizada
             SqlCommand Cmd = new SqlCommand(SqlQuery, Cn);
+            Cmd.Parameters.AddWithValue("@Id", Id);
             //abrindo conexão
             Cn.Open();
             //executando leitura
@@ -53,10 +56,10 @@ namespace Proj.Repositorio
             //loop para ler os dados do banco e jogar dentro da lista
             if (Sdr.Read())
             {
-                cidade.Id = Sdr.GetInt32(0);
-                cidade.Nome = Sdr.GetString(1);
-                cidade.Estado = Sdr.GetString(2);
-                cidade.Habitantes = Sdr.GetInt32(3);
+                 //construindo objetos
+                Cidade cidade = new Cidade(Convert.ToInt32(Sdr["Id"]), Sdr["Nome"].ToString(), Sdr["Estado"].ToString(), Convert.ToInt32(Sdr["Habitantes"]));
+                //inserindo na lista
+                Cidades.Add(cidade);
             }
             //fechando conexão
             Cn.Close();
@@ -82,10 +85,10 @@ namespace Proj.Repositorio
                 Cn = new SqlConnection(ConnectionString);
                 string SqlQuery = "UPDATE Cidades SET Nome = @n, Estado = @e, Habitantes = @h WHERE Id = @Id";
                 SqlCommand Cmd = new SqlCommand(SqlQuery, Cn);
-                Cmd.Parameters.AddWithValue("@Id", cidade.Id);
                 Cmd.Parameters.AddWithValue("@n", cidade.Nome);
                 Cmd.Parameters.AddWithValue("@e", cidade.Estado);
                 Cmd.Parameters.AddWithValue("@h", cidade.Habitantes);
+                Cmd.Parameters.AddWithValue("@Id", cidade.Id);
                 Cn.Open();
                 int r = Cmd.ExecuteNonQuery();
 
@@ -118,13 +121,12 @@ namespace Proj.Repositorio
         public string Deletar(int Id)
         {
             string msg = "";
-            SqlConnection con;
             try
             {
                 Cn = new SqlConnection(ConnectionString);
                 Cn.Open();
                 string SqlQuery = "DELETE FROM Cidades WHERE Id= @Id";
-                SqlCommand cmd = new SqlCommand(SqlQuery);
+                SqlCommand cmd = new SqlCommand(SqlQuery,Cn);
                 cmd.Parameters.AddWithValue("@Id", Id);
                 int r = cmd.ExecuteNonQuery();
                 if (r > 0)

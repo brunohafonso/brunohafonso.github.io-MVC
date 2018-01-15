@@ -1,0 +1,31 @@
+@model IEnumerable<Proj.Models.Cidade>
+
+@{
+    ViewData["title"] = "Detalhes";
+    foreach (var item in Model)
+    {
+        <div class="jumbotron">
+            <h2>
+                Detalhes da Cidade
+            </h2>
+            <dl>
+                <dt><h3>Id</h3></dt>
+                <dd>@item.Id</dd>
+            </dl>
+
+            <dl>
+                <dt><h3>Nome da Cidade</h3></dt>
+                <dd>@item.Nome</dd>
+            </dl>
+            <dl>
+                <dt><h3>Estado</h3></dt>
+                <dd>@item.Estado</dd>
+            </dl>
+            <dl>
+                <dt><h3>Habitantes</h3></dt>
+                <dd>@item.Habitantes</dd>
+            </dl>
+        </div> 
+    }
+}
+

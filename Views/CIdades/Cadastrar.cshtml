@@ -1,7 +1,7 @@
 @model Proj.Models.Cidade
-<!-- {
+@{
     ViewData["title"] = "Cadastrar";
-} -->
+} 
 
 <div class="row">
     <form asp-action="Cadastrar">
@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label">Estado</label>
-                <input  asp-for="Estado" class="form-control" placeholder="Ex: SP" required="required"/>
+                <input  asp-for="Estado" class="form-control" placeholder="Ex: SP" maxlength="2" required="required"/>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
