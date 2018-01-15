@@ -1,7 +1,10 @@
+<!-- enumerando dados do banco -->
 @model IEnumerable<Proj.Models.Cidade>
+<!-- criando elementos html -->
 <div>
     <h1>Minhas Cidades</h1>
     <p>
+        <!-- criando um link com uma action usando o razor -->
         @Html.ActionLink("Cadastrar nova cidade","Cadastrar","Cidades")
     </p>
     <table class="table">
@@ -12,6 +15,7 @@
             <th>População</td>
             <th colspan="3">Opções</th>
         </tr>
+        <!-- laço para exibir dados do banco na view -->
         @{
             foreach(var item in Model) {
                 <tr>
@@ -19,8 +23,11 @@
                     <td>@item.Nome</td>
                     <td>@item.Estado</td>
                     <td>@item.Habitantes Habitantes</td>
+                    <!-- criando um link com uma action usando o razor -->
                     <td>@Html.ActionLink("Editar", "Editar", "Cidades", new { @item.Id })</td>
+                    <!-- criando um link com uma action usando o razor -->
                     <td>@Html.ActionLink("Detalhes", "Detalhes", "Cidades", new { @item.Id})</td>
+                    <!-- criando um link com uma action usando o razor -->
                     <td>@Html.ActionLink("Excluir", "Deletar", "Cidades", new { @item.Id}, new{onclick="return confirm('Deseja mesmo excluir este item ?');"})</td>
                 </tr>
             }

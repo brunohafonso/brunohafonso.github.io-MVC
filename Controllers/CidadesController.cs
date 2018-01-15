@@ -90,7 +90,7 @@ namespace Proj.Controllers
             return RedirectToAction("Index");
         }
 
-        //
+        //metodo para retornar detalhes
         [HttpGet]
         public IActionResult Detalhes(int Id)
         {

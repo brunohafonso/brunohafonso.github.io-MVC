@@ -1,9 +1,14 @@
+<!--/modelo enumerando dados recebido do metodo de conexão-->
 @model IEnumerable<Proj.Models.Cidade>
 
+<!-- //iniciando estrutura do razor -->
 @{
+    //alteranto o titulo da pagina
     ViewData["title"] = "Detalhes";
+    //laço para pegar dados do banco
     foreach (var item in Model)
     {
+        //criando elementos html e inserindo dados do banco dentro deles
         <div class="jumbotron">
             <h2>
                 Detalhes da Cidade
